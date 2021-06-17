@@ -1,0 +1,46 @@
+													Identity and Access Managaement
+* Is all about authentication and authorization
+
+IAM Terms
+Account ID : Every AWS account has a unique account ID
+- User : Giving authentication to someone
+- Group : Categorizing users by some name
+		  ex : Admin, Developer
+- Role :  Is authentication and authorization given to AWS Service/Resource
+- Policy : Authorization . What you are allowed and what you are denied
+		   Two kinds of policies :
+					AWS Managed Policies
+					USer managed policies
+Policies can be created from console using UI options/JSON
+
+AWS Resources Creation
+	* For any resource that is created in AWS a unique ID known as ARN(Amazon Resource Name) is generated
+	* ARN can be computed
+	* AWS provides some patterns for finding ARN
+	* <accountid>:<region>:ec2:<ec2id>					
+
+NB : Deny has always has the highest priority over Allow whatever may be the position.	
+	
+==========================================================================================================================================
+													JSON(used to write policies)
+For example 
+{
+	"courses" : ["AWS", "Azure"]
+}
+	JSON is a coolecion od name value pairs .
+	"name": <value>
+	
+Simple value types :-
+	
+"age": 29 ---------------- number representation
+"name": "bibekanand" ----- test representation
+"visa": False ------------- boolean representation
+
+Complex value types :-
+
+'colors': ['Red', 'Green', 'Orange'] ------------------- List
+'Address': {
+	'apt': 'ABC'
+	'city': "XYZ'
+	'landmark': ['mero villa' ,'tulsipur']
+}
