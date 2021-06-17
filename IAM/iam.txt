@@ -38,9 +38,57 @@ Simple value types :-
 
 Complex value types :-
 
-'colors': ['Red', 'Green', 'Orange'] ------------------- List
-'Address': {
+1.'colors': ['Red', 'Green', 'Orange'] ------------------- List
+2.'Address': {
 	'apt': 'ABC'
 	'city': "XYZ'
 	'landmark': ['mero villa' ,'tulsipur']
 }
+3.'movies': ['run':{
+'cast': ['a', 'b', 'c'],
+'producer': ['ted', 'bill']
+}
+, 'metro': {
+'cast': ['ab', 'bc'],
+'producer': ['tedy', 'billy']
+}
+]
+==========================================================================================================================================
+												Writing Simple IAM Policies
+S3 bucket use case	:
+
+1. Give permission to user for S3 (Service level Access)
+2. Deny permisssion to user on some bucket ( Resource level access)
+3. Give permission to the user on s3 to read but not to write or delete or created
+
+Service level Policies :
+* it applies to all the resources under that service ( Consider user case 1 )
+* for every aws resource, we have an unique ARN and n the case of service level access I can assume resource as * (Anything)
+* Usecase 3 speaks about service level accesss but there are action based restrictions
+
+Terms :
+* Service : Amazon offering
+* Resource : whatever user creates
+* Actions : Different operations on resource
+
+
+IAM policy for usecase 1 :
+* to get all the actions google ```aws iam <service> actions```, in this case I will be querying with ```aws iam s3 actions```
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{	
+			"Effect": "Allow",
+			"Action": ["S3:*"],
+			"Resource": "*"
+		}
+	]
+}	
+
+
+
+
+
+
+
